@@ -1,0 +1,27 @@
+apply from: file("$rootDir/libraries.gradle")
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':domain')
+
+    implementation kotlin.jdk7
+    implementation google.dagger
+    implementation google.espressoIdlingResource
+    implementation google.lifecycleReactiveStreams
+    implementation google.locationPlayServices
+    implementation google.workRunner
+    implementation square.moshi
+    implementation square.okhttp
+    implementation patloew.rxLocation
+    implementation square.retrofit
+    implementation square.retrofitMoshiConverter
+    implementation square.retrofitRxAdapter
+    implementation reactive.android
+
+    kapt google.daggerCompiler
+    kapt square.moshiCodeGen
+
+    testImplementation junit.base
+    testImplementation mockk.base
+}

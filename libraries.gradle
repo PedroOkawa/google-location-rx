@@ -1,0 +1,94 @@
+apply from: file("$rootDir/versions.gradle")
+
+ext {
+    airbnb = [
+            lottie:                             "com.airbnb.android:lottie:$versions.lottie",
+            epoxy:                              "com.airbnb.android:epoxy:$versions.epoxy",
+            epoxyAnnotationProcessor:           "com.airbnb.android:epoxy-processor:$versions.epoxy"
+    ]
+
+    bumptech = [
+            glide:                              "com.github.bumptech.glide:glide:$versions.glide",
+            glideAnnotationProcessor:           "com.github.bumptech.glide:compiler:$versions.glide"
+    ]
+
+    cyberAgent = [
+            gpuImage:                           "jp.co.cyberagent.android:gpuimage:$versions.gpuImage"
+    ]
+
+    google = [
+            appCompat:                          "androidx.appcompat:appcompat:$versions.androidX",
+            constraintLayout:                   "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
+            coreKtx:                            "androidx.core:core-ktx:$versions.androidX",
+            coreTesting:                        "androidx.arch.core:core-testing:$versions.coreTesting",
+            dagger:                             "com.google.dagger:dagger:$versions.dagger",
+            daggerCompiler:                     "com.google.dagger:dagger-compiler:$versions.dagger",
+            daggerAndroid:                      "com.google.dagger:dagger-android:$versions.dagger",
+            daggerAndroidSupport:               "com.google.dagger:dagger-android-support:$versions.dagger",
+            daggerAndroidAnnotationProcessor:   "com.google.dagger:dagger-android-processor:$versions.dagger",
+            espressoContrib:                    "androidx.test.espresso:espresso-contrib:$versions.espresso",
+            espressoIntents:                    "androidx.test.espresso:espresso-intents:$versions.espresso",
+            espressoIdlingResource:             "androidx.test.espresso:espresso-idling-resource:$versions.espresso",
+            fragment:                           "androidx.fragment:fragment:$versions.fragment",
+            fragmentTesting:                    "androidx.fragment:fragment-testing:$versions.fragment",
+            legacySupport:                      "androidx.legacy:legacy-support-v4:$versions.legacySupport",
+            lifecycleExtensions:                "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
+            lifecycleReactiveStreams:           "androidx.lifecycle:lifecycle-reactivestreams:$versions.lifecycle",
+            locationPlayServices:               "com.google.android.gms:play-services-location:$versions.googlePlayServices",
+            mapsPlayServices:                   "com.google.android.gms:play-services-maps:$versions.googlePlayServices",
+            mapsUtils:                          "com.google.maps.android:android-maps-utils:$versions.androidMapsUtils",
+            multidex:                           "androidx.multidex:multidex:$versions.multidex",
+            navigationFragment:                 "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
+            navigationSafeArgs:                 "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation",
+            navigationUi:                       "androidx.navigation:navigation-ui-ktx:$versions.navigation",
+            swiptRefreshLayout:                 "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swipeRefreshLayout",
+            testCore:                           "androidx.test:core:$versions.testCore",
+            testJunit:                          "androidx.test.ext:junit:$versions.androidXJunit",
+            testOrchestrator:                   "androidx.test:orchestrator:$versions.testOrchestrator",
+            testRules:                          "androidx.test:rules:$versions.testRules",
+            testRunner:                         "androidx.test:runner:$versions.testRunner",
+            testEspresso:                       "androidx.test.espresso:espresso-core:$versions.androidXEspresso",
+            workRunner:                         "androidx.work:work-runtime:$versions.work"
+    ]
+
+    grenderG = [
+            toasty:                             "com.github.GrenderG:Toasty:$versions.toasty"
+    ]
+
+    patloew = [
+            rxLocation:                         "com.patloew.rxlocation:rxlocation:$versions.rxLocation"
+    ]
+
+    reactive = [
+            android:                            "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+            java:                               "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+            kotlin:                             "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+            binding:                            "com.jakewharton.rxbinding3:rxbinding:$versions.rxBinding",
+    ]
+
+    square = [
+            moshi:                              "com.squareup.moshi:moshi-kotlin:$versions.moshi",
+            moshiCodeGen:                       "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi",
+            okhttp:                             "com.squareup.okhttp3:logging-interceptor:$versions.okhttp",
+            retrofit:                           "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            retrofitRxAdapter:                  "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+            retrofitMoshiConverter:             "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    ]
+
+    junit = [
+            base:                               "junit:junit:$versions.junit"
+    ]
+
+    kotlin = [
+            jdk7:                               "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    ]
+
+    mockk = [
+            base:                               "io.mockk:mockk:$versions.mockk",
+            android:                            "io.mockk:mockk-android:$versions.mockk"
+    ]
+
+    wasabeef = [
+            glideTransformations:               "jp.wasabeef:glide-transformations:$versions.glideTransformations"
+    ]
+}

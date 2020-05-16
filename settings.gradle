@@ -1,0 +1,5 @@
+rootProject.name='GoogleMapsSample'
+include ':app'
+include ':core'
+include ':data'
+include ':domain'

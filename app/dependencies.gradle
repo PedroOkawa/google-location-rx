@@ -1,0 +1,38 @@
+apply from: file("$rootDir/libraries.gradle")
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':core')
+    implementation project(':data')
+    implementation project(':domain')
+
+    api google.daggerAndroid
+    api google.daggerAndroidSupport
+
+    implementation google.appCompat
+    implementation google.coreKtx
+    implementation google.constraintLayout
+    implementation google.dagger
+    implementation google.fragment
+    implementation google.lifecycleExtensions
+    implementation google.locationPlayServices
+    implementation google.mapsUtils
+    implementation google.mapsPlayServices
+    implementation google.multidex
+    implementation google.navigationFragment
+    implementation google.navigationUi
+    implementation kotlin.jdk7
+    implementation patloew.rxLocation
+    implementation reactive.android
+    implementation reactive.java
+    implementation reactive.kotlin
+    implementation reactive.binding
+
+    kapt google.daggerCompiler
+    kapt google.daggerAndroidAnnotationProcessor
+
+    androidTestImplementation google.testJunit
+    androidTestImplementation google.testEspresso
+    testImplementation junit.base
+}
