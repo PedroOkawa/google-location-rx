@@ -3,6 +3,7 @@ package com.okawa.sample.googlemaps.ui.tracker
 import android.content.pm.PackageManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -70,8 +71,10 @@ class TrackerFragment : BaseFragment(), OnMapReadyCallback {
 
     private fun onLocationModel(locationModel: LocationModel) {
         googleMap?.apply {
+            val latLng = LatLng(locationModel.latitude, locationModel.longitude)
             clear()
-            addMarker(MarkerOptions().position(LatLng(locationModel.latitude, locationModel.longitude)))
+            moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f))
+            addMarker(MarkerOptions().position(latLng))
         }
     }
 
