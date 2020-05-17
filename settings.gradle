@@ -1,4 +1,4 @@
-rootProject.name='GoogleMapsSample'
+rootProject.name='google-location-rx'
 include ':app'
 include ':core'
 include ':data'

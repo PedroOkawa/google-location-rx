@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">GoogleMapsSample</string>
+    <string name="app_name">Google Location Rx</string>
     <string name="home_button_text_track">Track</string>
 </resources>
