@@ -1,6 +1,5 @@
 package com.okawa.sample.googlemaps.ui.tracker
 
-import android.content.pm.PackageManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -48,12 +47,7 @@ class TrackerFragment : BaseFragment(), OnMapReadyCallback {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == PermissionsManager.LOCATION_PERMISSION_REQUEST_CODE && grantResults.isNotEmpty()) {
-            when (grantResults.first()) {
-                PackageManager.PERMISSION_GRANTED -> viewModel.onLocationPermissionGranted()
-                PackageManager.PERMISSION_DENIED -> viewModel.onLocationPermissionDenied()
-            }
-        }
+        viewModel.onRequestPermissionResult(requestCode, grantResults)
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {

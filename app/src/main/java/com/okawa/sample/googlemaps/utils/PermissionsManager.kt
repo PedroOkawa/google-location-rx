@@ -15,6 +15,8 @@ class PermissionsManager @Inject constructor() {
 
     companion object {
         const val LOCATION_PERMISSION_REQUEST_CODE = 0x0001
+        const val PERMISSION_GRANTED = PackageManager.PERMISSION_GRANTED
+        const val PERMISSION_DENIED = PackageManager.PERMISSION_DENIED
     }
 
     fun isLocationPermissionGranted(context: Context): Boolean {

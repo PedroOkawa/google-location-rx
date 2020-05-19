@@ -9,6 +9,7 @@ import com.okawa.sample.googlemaps.data.schedulers.BaseSchedulerProvider
 import com.okawa.sample.googlemaps.domain.usecase.GetLocationUseCase
 import com.okawa.sample.googlemaps.model.LocationModel
 import com.okawa.sample.googlemaps.model.mapToPresentation
+import com.okawa.sample.googlemaps.utils.PermissionsManager
 import javax.inject.Inject
 
 class TrackerViewModel @Inject constructor(
@@ -19,9 +20,17 @@ class TrackerViewModel @Inject constructor(
     private val _locationModel = MutableLiveData<LocationModel>()
     val locationModel: LiveData<LocationModel> = _locationModel
 
-    private val _navigation =
-        SingleLiveEvent<Navigation>()
+    private val _navigation = SingleLiveEvent<Navigation>()
     val navigation: LiveData<Navigation> = _navigation
+
+    fun onRequestPermissionResult(requestCode: Int, grantResults: IntArray) {
+        if (requestCode == PermissionsManager.LOCATION_PERMISSION_REQUEST_CODE && grantResults.isNotEmpty()) {
+            when (grantResults.first()) {
+                PermissionsManager.PERMISSION_GRANTED -> onLocationPermissionGranted()
+                PermissionsManager.PERMISSION_DENIED -> onLocationPermissionDenied()
+            }
+        }
+    }
 
     fun onLocationPermissionGranted() {
         getLocationUseCase
@@ -33,7 +42,7 @@ class TrackerViewModel @Inject constructor(
             )
     }
 
-    fun onLocationPermissionDenied() {
+    private fun onLocationPermissionDenied() {
         _navigation.postValue(Navigation.Finish)
     }
 
