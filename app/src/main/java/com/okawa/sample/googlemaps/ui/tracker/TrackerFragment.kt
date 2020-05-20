@@ -29,9 +29,7 @@ class TrackerFragment : BaseFragment(), OnMapReadyCallback {
         get() = R.layout.fragment_tracker
 
     override fun setupViews() {
-        (childFragmentManager.findFragmentById(R.id.fg_tracker_map) as? SupportMapFragment)?.apply {
-            getMapAsync(this@TrackerFragment)
-        }
+        (childFragmentManager.findFragmentById(R.id.fg_tracker_map) as? SupportMapFragment)?.getMapAsync(this)
     }
 
     override fun setupViewModel() {
@@ -65,9 +63,9 @@ class TrackerFragment : BaseFragment(), OnMapReadyCallback {
 
     private fun onLocationModel(locationModel: LocationModel) {
         googleMap?.apply {
-            val latLng = LatLng(locationModel.latitude, locationModel.longitude)
             clear()
-            moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f))
+            val latLng = LatLng(locationModel.latitude, locationModel.longitude)
+            moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, locationModel.zoom))
             addMarker(MarkerOptions().position(latLng))
         }
     }

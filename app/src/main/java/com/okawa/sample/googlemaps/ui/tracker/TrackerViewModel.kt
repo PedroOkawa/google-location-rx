@@ -7,6 +7,8 @@ import com.okawa.sample.googlemaps.data.viewmodel.BaseViewModel
 import com.okawa.sample.googlemaps.data.livedata.SingleLiveEvent
 import com.okawa.sample.googlemaps.data.schedulers.BaseSchedulerProvider
 import com.okawa.sample.googlemaps.domain.usecase.GetLocationUseCase
+import com.okawa.sample.googlemaps.model.APPROXIMATE_ZOOM_BUILDINGS
+import com.okawa.sample.googlemaps.model.APPROXIMATE_ZOOM_STREETS
 import com.okawa.sample.googlemaps.model.LocationModel
 import com.okawa.sample.googlemaps.model.mapToPresentation
 import com.okawa.sample.googlemaps.utils.PermissionsManager
@@ -35,7 +37,7 @@ class TrackerViewModel @Inject constructor(
     fun onLocationPermissionGranted() {
         getLocationUseCase
             .build()
-            .map { it.mapToPresentation() }
+            .map { it.mapToPresentation(APPROXIMATE_ZOOM_BUILDINGS) }
             .baseSubscribe(
                 onSuccess = ::onGetLocationSuccess,
                 onError = ::onGetLocationError

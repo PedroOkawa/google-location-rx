@@ -14,8 +14,8 @@ import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 import javax.inject.Singleton
 
-private const val LOCATION_REQUEST_INTERVAL = 10000L
-private const val LOCATION_REQUEST_FASTEST_INTERVAL = 5000L
+private const val LOCATION_REQUEST_INTERVAL = 5000L
+private const val LOCATION_REQUEST_FASTEST_INTERVAL = 2500L
 
 @Singleton
 class GoogleLocationDataSource @Inject constructor(context: Context) {
